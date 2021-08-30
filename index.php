@@ -1,29 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./style.css" >
-  <title>デイトラ PHP</title>
+  <title>入力ホーム</title>
 </head>
+
 <body>
-  <div class="container">
-    <div class="app-container">
-      <h1 class="title">DailyTrial Shopping</h1>
-      <div class="cards-container">
-        <div class="card">
-          <img class="card-image" src="https://dnbz0c2oupsw6.cloudfront.net/bcekt8ctzrsfdj1gsus49v9tnhqu" alt="">
-          <p class="card-title">ミネラルウォーター</p>
-          <div class="flex justify-between">
-            <p class="card-price">230円</p>
-            <input min="0" class="item-number" type="number" value="0">
-          </div>
-        </div>
-      </div>
-      <div class="btn-footer bg-white">
-        <input class="cart-btn" type="submit" name="submit" value="カートに追加" />
-      </div>
-    </div>
-  </div>
+
+  <h2>お問い合わせ画面</h2>
+  <form name="inquiry" action="thankyou.php" method="post">
+    <table border="1">
+      <tr>
+        <th>お名前</th>
+        <td><input type="text" name="simei" value=""></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td><input type="text" name="email" value=""></td>
+      </tr>
+      <tr>
+        <th>地域</th>
+        <td>
+          <select name="area" id="">
+            <option value=""></option>
+            <option value="北海道">北海道</option>
+            <option value="東北">東北</option>
+            <option value="関東">関東</option>
+            <option value="中部">中部</option>
+            <option value="近畿">近畿</option>
+            <option value="中国">中国</option>
+            <option value="四国">四国</option>
+            <option value="九州">九州</option>
+          </select><!-- /# -->
+        </td>
+      </tr>
+      <tr>
+        <th>お問合せ種別</th>
+        <td>
+          <input type="checkbox" name="type[]" value="ユーザー登録について">
+          ユーザー登録について<br>
+          <input type="checkbox" name="type[]" value="商品に関するお問合せ">
+          商品に関するお問合せ<br>
+          <input type="checkbox" name="type[]" value="返品について">
+          返品について<br>
+        </td>
+      </tr>
+      <tr>
+        <th>お問合せ内容</th>
+        <td>
+          <textarea name="inquiry" id="" cols="50" rows="3"></textarea><!-- /# -->
+        </td>
+      </tr>
+      <tr>
+        <th>お得な情報をEメールで受け取りますか</th>
+        <td>
+          <input type="radio" name="news_type" value="受け取ります">
+          受け取ります<br>
+          <input type="radio" name="news_type" value="受け取りません">
+          受け取りません<br>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" name="operation" value="send">送信する</button>
+  </form>
+
 </body>
+
 </html>
